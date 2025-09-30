@@ -1,0 +1,106 @@
+<section>
+    <div class="bg">
+        <img src="kolsay-image-2.jpg" class="background-img" alt="Kolsay Lake, Kazakhstan">
+        <div class="overlay"></div>
+        <div class="overlay-2"></div>
+    </div>
+    <div class="hero-content">
+        <h1 class="hero-title">Go Travel Kazakstan</h1>
+        <p class="hero-subtitle">
+            Escape to Kazakhstan's alpine lakes, untouched steppes, and mountain trails. We craft journeys that
+            balance adventure and serenity.
+        </p>
+    </div>
+    <div class="tours-info">
+        <main class="tours-section">
+            <div class="tours-shell">
+                <header class="tours-head">
+                    <span class="tours-kicker">Signature Tours</span>
+                    <h2 class="tours-title">Discover Kazakhstan with our guides</h2>
+                    <p class="tours-description">
+                        Curated itineraries that blend alpine lakes, dramatic canyons, and nomadic culture. Scroll to find
+                        the journey that matches your pace.
+                    </p>
+                    <div class="slider-nav">
+                        <button type="button" class="slider-arrow prev" aria-label="Previous tours" (click)="scrollSlider('prev')">
+                            <i-lucide [img]="MoveLeft" class="arrow-icon"></i-lucide>
+                        </button>
+                        <button type="button" class="slider-arrow next" aria-label="Next tours" (click)="scrollSlider('next')">
+                        <i-lucide [img]="MoveRight" class="arrow-icon"></i-lucide>
+                        </button>
+                    </div>
+                </header>
+                <div class="tours-slider" #slider>
+                    @for (items of [1,2,3,4,5,6]; track $index) {
+                        <app-tour-landing-card></app-tour-landing-card>
+                    }
+                    
+                    <!-- <article class="tour-card">
+                        <figure class="tour-media">
+                            <img src="kolsay-image-2.jpg" alt="Boats at Kolsai Lake">
+                            <span class="tour-badge">5 Days</span>
+                        </figure>
+                        <div class="tour-body">
+                            <h3 class="tour-name">Kolsai Lakes Escape</h3>
+                            <p class="tour-summary">Cruise the alpine lakes, kayak through mirrored waters, and camp under
+                                the Tian Shan stars.</p>
+                            <div class="tour-meta">
+                                <span class="tour-price">$890</span>
+                                <span class="tour-detail">Group of 12</span>
+                            </div>
+                            <button type="button" class="tour-cta">View Tour</button>
+                        </div>
+                    </article> -->
+                    <!-- <article class="tour-card">
+                        <figure class="tour-media">
+                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Sunrise at Charyn Canyon">
+                            <span class="tour-badge">3 Days</span>
+                        </figure>
+                        <div class="tour-body">
+                            <h3 class="tour-name">Charyn Canyon Adventure</h3>
+                            <p class="tour-summary">Hike crimson cliffs, stargaze from the Valley of Castles, and taste
+                                campfire cuisine.</p>
+                            <div class="tour-meta">
+                                <span class="tour-price">$540</span>
+                                <span class="tour-detail">Sunrise tour</span>
+                            </div>
+                            <button type="button" class="tour-cta">View Tour</button>
+                        </div>
+                    </article>
+                    <article class="tour-card">
+                        <figure class="tour-media">
+                            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Wild horses on Kazakh steppe">
+                            <span class="tour-badge">7 Days</span>
+                        </figure>
+                        <div class="tour-body">
+                            <h3 class="tour-name">Nomad Steppe Odyssey</h3>
+                            <p class="tour-summary">Ride across open steppe, stay in yurt camps, and learn eagle hunting
+                                traditions.</p>
+                            <div class="tour-meta">
+                                <span class="tour-price">$1,250</span>
+                                <span class="tour-detail">All inclusive</span>
+                            </div>
+                            <button type="button" class="tour-cta">View Tour</button>
+                        </div>
+                    </article>
+                    <article class="tour-card">
+                        <figure class="tour-media">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80" alt="Desert dunes at sunset">
+                            <span class="tour-badge">4 Days</span>
+                        </figure>
+                        <div class="tour-body">
+                            <h3 class="tour-name">Altyn-Emel Safari</h3>
+                            <p class="tour-summary">Chase the singing dunes, meet wild kulan herds, and unwind in hidden
+                                oases.</p>
+                            <div class="tour-meta">
+                                <span class="tour-price">$760</span>
+                                <span class="tour-detail">Eco friendly</span>
+                            </div>
+                            <button type="button" class="tour-cta">View Tour</button>
+                        </div>
+                    </article> -->
+                </div>
+            </div>
+        </main>
+    </div>
+</section>

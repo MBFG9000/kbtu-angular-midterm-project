@@ -1,0 +1,249 @@
+.bg {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 120vh;
+}
+
+:host {
+    --parallax-offset: 0;
+}
+
+.bg .background-img {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    transform: translate3d(0, calc(var(--parallax-offset) * 1px), 0);
+    transition: transform 0.12s linear;
+    z-index: -3;
+    will-change: transform;
+}
+
+.bg .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(160deg, rgba(18, 52, 55, 0.9) 0%, rgba(23, 82, 78, 0.55) 45%, rgba(36, 132, 115, 0.22) 75%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+.bg .overlay-2 {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.3) 0%, transparent 30%), radial-gradient(circle at 82% 18%, rgba(126, 255, 214, 0.28) 0%, transparent 38%), linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(4, 28, 26, 0.7) 85%);
+    mix-blend-mode: screen;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 0 1.5rem;
+    max-width: 70%;
+    margin: 0 auto;
+    color: #f6fffb;
+    z-index: 0;
+    animation: heroFadeUp 0.9s ease forwards;
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+.hero-title {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    font-size: clamp(3.2rem, 9vw, 5.6rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 26px 55px rgba(2, 12, 15, 0.95);
+}
+
+.hero-subtitle {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+    line-height: 1.8;
+    color: rgba(232, 248, 244, 0.92);
+    max-width: 48ch;
+}
+
+@keyframes heroFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tours-info {
+    background-color: white;
+}
+
+.tours-section {
+    position: relative;
+    top: -110px;
+    padding: 0 4vw 140px;
+    display: flex;
+    justify-content: center;
+}
+
+.tours-shell {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 36px;
+    box-shadow: 0 40px 90px rgba(8, 46, 42, 0.14);
+    padding: 60px 56px 70px;
+    overflow: hidden;
+}
+
+.tours-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at -10% -20%, rgba(0, 210, 127, 0.35) 0%, transparent 55%), radial-gradient(circle at 110% 0%, rgba(255, 96, 148, 0.28) 0%, transparent 50%);
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.tours-head {
+    font-family: "Poppins";
+    position: relative;
+    display: grid;
+    gap: 18px;
+    text-align: left;
+    color: #06342c;
+}
+
+.tours-kicker {
+    font-size: 0.85rem;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: rgba(6, 52, 44, 0.62);
+}
+
+.tours-title {
+    margin: 0;
+    font-size: clamp(2.2rem, 4vw, 3.1rem);
+    font-weight: 600;
+    color: #082c24;
+}
+
+.tours-description {
+    margin: 0;
+    max-width: 560px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(6, 52, 44, 0.78);
+}
+
+.slider-nav {
+    margin-top: 14px;
+    display: flex;
+    gap: 16px;
+}
+
+.slider-arrow {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #00d27f 0%, #00784e 100%);
+    color: #f3fff9;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 18px 34px rgba(0, 100, 64, 0.32);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-arrow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 40px rgba(0, 100, 64, 0.4);
+}
+
+.slider-arrow:active {
+    transform: translateY(0);
+    box-shadow: 0 14px 26px rgba(0, 100, 64, 0.35);
+}
+
+.tours-slider {
+    position: relative;
+    margin-top: 48px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(280px, 320px);
+    gap: 32px;
+    overflow-x: auto;
+    padding: 20px 20px 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    background-color: transparent;
+}
+
+.tours-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+@media (max-width: 1024px) {
+    .tours-section {
+        margin-top: -60px;
+        padding: 0 3vw 120px;
+    }
+
+    .tours-shell {
+        padding: 48px 40px 60px;
+        border-radius: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 0 1.25rem;
+    }
+
+    .tours-section {
+        margin-top: -40px;
+        padding: 0 1.5rem 100px;
+    }
+
+    .tours-shell {
+        padding: 40px 28px 48px;
+    }
+
+    .slider-nav {
+        display: none;
+    }
+
+    .tours-slider {
+        margin-top: 32px;
+        grid-auto-columns: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tour-card {
+        grid-template-rows: 200px auto;
+    }
+
+    .tour-body {
+        padding: 22px;
+    }
+}
