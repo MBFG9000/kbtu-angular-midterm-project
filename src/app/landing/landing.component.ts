@@ -9,7 +9,8 @@ import { TourLandingCardComponent } from '../tour-landing-card/tour-landing-card
 })
 export class LandingComponent implements AfterViewInit {
 
-  readonly MoveRight = MoveRight; readonly MoveLeft = MoveLeft;
+  readonly MoveRight = MoveRight;
+  readonly MoveLeft = MoveLeft;
 
   @ViewChild('slider') private sliderRef?: ElementRef<HTMLElement>;
 
@@ -41,6 +42,11 @@ export class LandingComponent implements AfterViewInit {
   @HostListener('window:scroll')
   onScroll(): void {
     this.updateParallax();
+  }
+
+  handleContactSubmit(event: Event): void {
+    event.preventDefault();
+    // Placeholder: integrate with backend or service.
   }
 
   private updateParallax(): void {
