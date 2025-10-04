@@ -1,17 +1,16 @@
 <article class="tour-card">
   <figure class="tour-media">
-    <img src="kolsay-image-2.jpg" alt="Boats at Kolsai Lake" />
-    <span class="tour-badge">5 Days</span>
+    <img [src]="tour.imageUrl"/>
+    <span class="tour-badge">{{tour.durationDays}} Days</span>
   </figure>
   <div class="tour-body">
-    <h3 class="tour-name">Kolsai Lakes Escape</h3>
+    <h3 class="tour-name">{{tour.name}}</h3>
     <p class="tour-summary">
-      Cruise the alpine lakes, kayak through mirrored waters, and camp under the
-      Tian Shan stars.
+      {{tour.description}}
     </p>
     <div class="tour-meta">
-      <span class="tour-price">$890</span>
-      <span class="tour-detail">Group of 12</span>
+      <span class="tour-price">${{tour.price}}</span>
+      <span class="tour-detail">Group of {{tour.peopleNumber}}</span>
     </div>
     <button type="button" class="tour-cta">View Tour</button>
   </div>

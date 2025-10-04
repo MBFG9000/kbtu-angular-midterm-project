@@ -31,82 +31,19 @@
                     </div>
                 </header>
                 <div class="tours-slider" #slider>
-                    @for (items of [1,2,3,4,5,6]; track $index) {
-                        <app-tour-landing-card></app-tour-landing-card>
+                    @for (tour of tours; track $index) {
+                        <app-tour-landing-card [tour]="tour"></app-tour-landing-card>
                     }
-                    
-                    <!-- <article class="tour-card">
-                        <figure class="tour-media">
-                            <img src="kolsay-image-2.jpg" alt="Boats at Kolsai Lake">
-                            <span class="tour-badge">5 Days</span>
-                        </figure>
-                        <div class="tour-body">
-                            <h3 class="tour-name">Kolsai Lakes Escape</h3>
-                            <p class="tour-summary">Cruise the alpine lakes, kayak through mirrored waters, and camp under
-                                the Tian Shan stars.</p>
-                            <div class="tour-meta">
-                                <span class="tour-price">$890</span>
-                                <span class="tour-detail">Group of 12</span>
-                            </div>
-                            <button type="button" class="tour-cta">View Tour</button>
-                        </div>
-                    </article> -->
-                    <!-- <article class="tour-card">
-                        <figure class="tour-media">
-                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Sunrise at Charyn Canyon">
-                            <span class="tour-badge">3 Days</span>
-                        </figure>
-                        <div class="tour-body">
-                            <h3 class="tour-name">Charyn Canyon Adventure</h3>
-                            <p class="tour-summary">Hike crimson cliffs, stargaze from the Valley of Castles, and taste
-                                campfire cuisine.</p>
-                            <div class="tour-meta">
-                                <span class="tour-price">$540</span>
-                                <span class="tour-detail">Sunrise tour</span>
-                            </div>
-                            <button type="button" class="tour-cta">View Tour</button>
-                        </div>
-                    </article>
-                    <article class="tour-card">
-                        <figure class="tour-media">
-                            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Wild horses on Kazakh steppe">
-                            <span class="tour-badge">7 Days</span>
-                        </figure>
-                        <div class="tour-body">
-                            <h3 class="tour-name">Nomad Steppe Odyssey</h3>
-                            <p class="tour-summary">Ride across open steppe, stay in yurt camps, and learn eagle hunting
-                                traditions.</p>
-                            <div class="tour-meta">
-                                <span class="tour-price">$1,250</span>
-                                <span class="tour-detail">All inclusive</span>
-                            </div>
-                            <button type="button" class="tour-cta">View Tour</button>
-                        </div>
-                    </article>
-                    <article class="tour-card">
-                        <figure class="tour-media">
-                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80" alt="Desert dunes at sunset">
-                            <span class="tour-badge">4 Days</span>
-                        </figure>
-                        <div class="tour-body">
-                            <h3 class="tour-name">Altyn-Emel Safari</h3>
-                            <p class="tour-summary">Chase the singing dunes, meet wild kulan herds, and unwind in hidden
-                                oases.</p>
-                            <div class="tour-meta">
-                                <span class="tour-price">$760</span>
-                                <span class="tour-detail">Eco friendly</span>
-                            </div>
-                            <button type="button" class="tour-cta">View Tour</button>
-                        </div>
-                    </article> -->
                 </div>
             </div>
         </main>
-        <section class="contact-section">
+        
+    </div>
+    <section class="contact-section" id="contact">
             <div class="contact-shell">
                 <div class="contact-intro">
                     <span class="contact-kicker">Get In Touch</span>
-                    <h2 class="contact-title">Plan your bespoke journey</h2>
+                    <h2 class="contact-title">Plan your journey with us</h2>
                     <p class="contact-copy">
                         Tell us what kind of landscapes move you—alpine lakes, desert canyons, or sweeping steppes—and our travel
                         designers will craft an itinerary that fits your rhythm.
@@ -125,34 +62,42 @@
                             <h3>Contact</h3>
                             <p>
                                 <a href="tel:+77772155655">+7 (777) 215 56 55</a><br>
-                                <a href="mailto:hello@gotravel.kz">hello@gotravel.kz</a>
+                                <a href="mailto:hello&#64;gotravel.kz">hello&#64;gotravel.kz</a>
                             </p>
                         </div>
                         <div class="info-block social">
                             <h3>Instagram</h3>
                             <a class="instagram-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
-                                @GoTravelKazakhstan
+                                &#64;GoTravelKazakhstan
                             </a>
                             <p>Share your moments with <strong>#GoTravelKZ</strong></p>
                         </div>
                     </div>
-                    <form class="contact-form" (submit)="handleContactSubmit($event)">
-                        <div class="form-row">
-                            <label for="contact-name">Name</label>
-                            <input id="contact-name" name="name" type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="contact-email">Email</label>
-                            <input id="contact-email" name="email" type="email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="contact-message">How can we help?</label>
-                            <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your dream trip" required></textarea>
-                        </div>
-                        <button class="contact-submit" type="submit">Send Request</button>
-                    </form>
+                    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="handleContactSubmit()">
+  <div class="form-row">
+    <label for="contact-name">Name</label>
+    <input id="contact-name" formControlName="name" type="text" placeholder="Your name">
+  </div>
+
+  <div class="form-row">
+    <label for="contact-email">Email</label>
+    <input id="contact-email" formControlName="email" type="email" placeholder="you@example.com">
+  </div>
+
+  <div class="form-row">
+    <label for="contact-message">How can we help?</label>
+    <textarea id="contact-message" formControlName="message" rows="4" placeholder="Tell us about your dream trip"></textarea>
+  </div>
+
+  <button class="contact-submit" type="submit" [disabled]="isSubmitting || contactForm.invalid" [class.disabled]="contactForm.invalid">
+    {{ isSubmitting ? 'Sending...' : 'Send Request' }}
+  </button>
+
+  @if (responseMessage) {
+    <p class="response-text">{{ responseMessage }}</p>
+  }
+</form>
                 </div>
             </div>
         </section>
-    </div>
 </section>

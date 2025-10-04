@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TourCard } from '../models/tours.model';
 
 @Component({
   selector: 'app-tour-landing-card',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './tour-landing-card.component.css'
 })
 export class TourLandingCardComponent {
-
+  @Input() tour!:TourCard;
 }
