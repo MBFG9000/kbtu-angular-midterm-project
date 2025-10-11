@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TourCard } from './models/tours.model';
+import { catchError, Observable } from 'rxjs';
+import { TourCard, TourCard2 } from './models/tours.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,16 @@ export class ToursProviderService {
 
   sendMessage(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/api/contact`, data)
+  }
+
+  getTours(term: string = ''): Observable<TourCard2[]> {
+    term = term.trim();
+
+    const options = term ? { params: new HttpParams().set('name', term) } : {};
+
+    return this.http.get<TourCard2[]>(`${this.baseUrl}/api/tours3`, options)
+    // .pipe(
+    //   catchError(this.handleError<TourCard[]>('searchHeroes', []))
+    // )
   }
 }

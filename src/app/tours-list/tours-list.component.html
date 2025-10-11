@@ -1,0 +1,43 @@
+<div class="blur">
+
+</div>
+<section class="tours-list">
+  <header class="tours-list__header">
+    <div class="tours-list__headline">
+      <p class="tours-list__eyebrow">Discover Kazakhstan</p>
+      <h2>Signature Journeys Crafted by Local Experts</h2>
+      <p>
+        Explore the mountains, deserts, and modern cities with curated itineraries designed to balance
+        adventure and comfort.
+      </p>
+    </div>
+
+    <form class="tours-search" role="search">
+      <label class="sr-only" for="tours-search-input">Search tours</label>
+      <div class="tours-search__group">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path
+            d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.71.71l.27.28v.79l5 4.99L20.49 19zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"
+          />
+        </svg>
+        <input
+          id="tours-search-input"
+          [formControl]="searchControl"
+          type="search"
+          name="query"
+          autocomplete="off"
+          placeholder="Search destination or experience"
+        />
+      </div>
+      <!-- <button type="button">Search</button> -->
+    </form>
+  </header>
+
+  <div class="tours-grid">
+    @if (tours$ | async; as tours) {
+      @for (tour of tours; track $index) {
+        <app-tour-card-2 [tour]="tour"></app-tour-card-2>
+      }
+    }
+  </div>
+</section>

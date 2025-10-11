@@ -1,0 +1,14 @@
+<article class="tour-card-2" [style.--tour-image]="'url(' + tour.image + ')'">
+  <div class="tour-card-2__media"></div>
+  <div class="tour-card-2__body">
+    <span class="tour-card-2__tag">{{ tour.category }}</span>
+    <h3 class="tour-card-2__title">{{ tour.title }}</h3>
+    <p class="tour-card-2__description">
+      {{ tour.description }}
+    </p>
+    <footer class="tour-card-2__footer">
+      <span class="tour-card-2__meta">{{ tour.duration }} Days · {{ tour.price }}</span>
+      <button type="button" class="tour-card-2__cta">{{ tour.cta }}</button>
+    </footer>
+  </div>
+</article>

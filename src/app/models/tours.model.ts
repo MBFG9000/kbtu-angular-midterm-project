@@ -7,3 +7,13 @@ export interface TourCard {
     durationDays:number;
     peopleNumber:number;
 }
+
+export interface TourCard2 {
+  category: string;
+  title: string;
+  description: string;
+  duration: number;
+  price: string;
+  image: string;
+  cta: string;
+}

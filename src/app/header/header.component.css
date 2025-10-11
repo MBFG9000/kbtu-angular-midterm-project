@@ -115,3 +115,9 @@ header nav li:hover::after {
         transform: translateY(0);
     }
 }
+
+header.light {
+  background: rgba(255,255,255,0.85);
+  color: #06342c;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+}

@@ -8,5 +8,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  scrollTo(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  }
 
+  
 }
