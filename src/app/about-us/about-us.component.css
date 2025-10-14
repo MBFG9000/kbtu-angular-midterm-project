@@ -1,6 +1,122 @@
-header{
-    background: rgba(21, 59, 47, 0.55);
-    backdrop-filter: blur(14px) ;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 24px 45px rgba(4, 18, 14, 0.25);
+:host {
+    display: block;
+    font-family: "Poppins", "Inter", system-ui, sans-serif;
+    background-color: #ffffff;
+}
+
+.about-us__spacer {
+    height: 140px;
+    background: #a3a6aa;
+}
+
+.about-us {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+    color: #162029;
+    display: grid;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+.about-us__intro {
+    display: grid;
+    gap: 1rem;
+}
+
+.about-us__eyebrow {
+    margin: 0;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #6b7a89;
+}
+
+.about-us__intro h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    color: #0f2f41;
+}
+
+.about-us__intro p {
+    margin: 0;
+    line-height: 1.7;
+    color: #455460;
+}
+
+.about-us__body {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+.about-us figure {
+    margin: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(18, 40, 58, 0.18);
+    border: 1px solid rgba(22, 32, 41, 0.08);
+}
+
+.show-img {
+    display: block;
+    width: 100%;
+    height: clamp(240px, 45vw, 420px);
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-us__section {
+    display: grid;
+    gap: 0.75rem;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    box-shadow: 0 24px 50px rgba(19, 44, 63, 0.08);
+    border: 1px solid rgba(22, 32, 41, 0.06);
+}
+
+.about-us__section h2,
+.about-us__section h3 {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    color: #0f2f41;
+}
+
+.about-us__section p {
+    margin: 0;
+    line-height: 1.7;
+    color: #485663;
+}
+
+.about-us__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.about-us__grid > div {
+    display: grid;
+    gap: 0.65rem;
+    background: linear-gradient(180deg, rgba(239, 246, 255, 0.85), rgba(255, 255, 255, 0.95));
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(129, 147, 163, 0.12);
+}
+
+.about-us__grid h3 {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 640px) {
+    .about-us__spacer {
+        height: 120px;
+    }
+
+    .about-us__section {
+        padding: 1.5rem;
+    }
+
+    .show-img {
+        height: clamp(220px, 60vw, 320px);
+    }
 }
