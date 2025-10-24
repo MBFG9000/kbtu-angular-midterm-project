@@ -8,7 +8,7 @@ import { TourCard, TourCard2 } from './models/tours.model';
 })
 
 export class ToursProviderService {
-  private readonly baseUrl = 'http://localhost:3000';
+  private readonly baseUrl = 'https://express-nine-zeta.vercel.app';
 
   constructor(private http: HttpClient) {}
 
