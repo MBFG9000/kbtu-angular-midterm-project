@@ -3,7 +3,7 @@
 
 
 This Landing Page of Kazakhstan Tour Website
-<img src="/public/landing.png">
+<img src="public/landing.png">
 ## BACKEND Part
 
 The API part of App is already on <a href="https://express-nine-zeta.vercel.app/">here</a> and also link is in <a href="/src/app/tours-provider.service.ts">Angular service</a>
