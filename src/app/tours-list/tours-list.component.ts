@@ -5,7 +5,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { catchError, debounceTime, distinctUntilChanged, map, of, startWith, switchMap } from 'rxjs';
 import { ToursProviderService } from '../tours-provider.service';
 import { AsyncPipe } from '@angular/common';
-import { ContactUsComponent } from '../contact-us/contact-us.component';
+
 
 @Component({
   selector: 'app-tours-list',
